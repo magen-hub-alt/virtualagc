@@ -337,7 +337,7 @@ export class FlightScene {
       this.vent.add(m);
     }
     this.csm.add(this.vent);
-    this.highlight = new T.BoxHelper(this.csm, 0x75dcdf);
+    this.highlight = new T.Box3Helper(new T.Box3(), 0x75dcdf);
     this.highlight.material.transparent = true;
     this.highlight.material.opacity = 0.5;
     this.scene.add(this.highlight);
@@ -623,7 +623,17 @@ export class FlightScene {
       if (this.focusId.startsWith("entry"))
         target = this.csm.getObjectByName("Command Module");
       target.updateWorldMatrix(true, true);
-      this.highlight.setFromObject(target);
+      this.highlight.box.makeEmpty();
+      target.traverseVisible((object) => {
+        if (object.isMesh && object.name !== "Engine exhaust") {
+          object.geometry.computeBoundingBox();
+          this.highlight.box.union(
+            object.geometry.boundingBox
+              .clone()
+              .applyMatrix4(object.matrixWorld),
+          );
+        }
+      });
     }
     this.thrustArrow.visible =
       this.showVectors && this.view !== "map" && s.throttle > 0;
