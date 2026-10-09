@@ -1,0 +1,25 @@
+{
+  "upstream": "virtualagc/virtualagc",
+  "commit": "c9d3953778030af9f49aa74f88b2bbd9a9387053",
+  "sourceLicense": "Public domain per file headers",
+  "emulatorLicense": "GPL-2.0-or-later",
+  "programs": {
+    "LM131R1": {
+      "ropeSha256": "f333b7de10113b4c211cda82a573f01e88cea69899dbb5a4ec47d104d041c4f1",
+      "ropeBytes": 73728,
+      "sourceFiles": 88,
+      "mappedWords": 35809,
+      "sourceIndexSha256": "c3c8eb9749d7a279b1da9624e09680566aba1b9d448cb9447d5dedec20a18c57",
+      "provenance": "Reconstructed from Luminary131 listing plus flown B5 module dump; all 36,864 data words match the upstream composite dump after parity bits are removed."
+    },
+    "Manche72R3": {
+      "ropeSha256": "1e28092a8ed59529bdc594ea58ba81be0a988d62a6c5c653b0b1f7e0f39e3ad4",
+      "ropeBytes": 73728,
+      "sourceFiles": 85,
+      "mappedWords": 35781,
+      "sourceIndexSha256": "ed71fdbd1e51197748d9c9b490580a26331f30dd99c3c8f0ef616f88d945eff4",
+      "provenance": "Reconstructed from Comanche072 plus approved Manche72 change; bank checksums match. Upstream notes two instruction-order ambiguities inherited from Comanche072; no original complete listing or rope dump is available."
+    }
+  },
+  "wasmSha256": "d26de1d9903b40fc6f8ad34717ad1a1635004c27e602ac3ad790749bb6b6baa0"
+}
