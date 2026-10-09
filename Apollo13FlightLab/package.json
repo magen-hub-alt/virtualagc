@@ -1,0 +1,24 @@
+{
+  "name": "apollo13-flight-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run lint && npm test && npm run build && npm run standalone",
+    "standalone": "node scripts/build-standalone.mjs",
+    "format": "prettier --write src tests scripts/*.mjs vite.config.js index.html README.md THIRD_PARTY_NOTICES.md",
+    "lint": "prettier --check src tests scripts/*.mjs vite.config.js index.html README.md THIRD_PARTY_NOTICES.md"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9",
+    "vite": "^7.1.0"
+  },
+  "license": "GPL-2.0-or-later"
+}
